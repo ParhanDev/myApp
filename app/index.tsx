@@ -1,14 +1,23 @@
-import { Text, View } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { Text, TextInput, View } from "react-native";
 
 export default function Index() {
   return (
     <View>
       {/* Belajar text */}
-      <Text>Hello farhan</Text>
+      <Text>name</Text>
 
       {/* Belajar text Input */}
-      <TextInput placeholder="Type here to translate" />
+      <TextInput placeholder="isi nama" />
+      {/* Belajar text */}
+      <Text>class</Text>
+
+      {/* Belajar text Input */}
+      <TextInput placeholder="isi kelas" />
+      {/* Belajar text */}
+      <Text>hobby</Text>
+
+      {/* Belajar text Input */}
+      <TextInput placeholder="isi hobby" />
     </View>
   );
 }
