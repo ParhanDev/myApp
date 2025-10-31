@@ -1,69 +1,85 @@
 import { Button, Text, TextInput, View } from "react-native";
+
 export default function LoginScreen() {
   return (
     <View
       style={{
+        flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#e4e4e4ff",
-        flex: 1,
-        padding: 20,
+        padding: 25,
+        backgroundColor: "grey-",
       }}
     >
-      <Text style={{ fontSize: 24, fontWeight: "bold", marginBottom: 15 }}>
+      <Text
+        style={{
+          height: 30,
+          margin: 5,
+          fontSize: 20,
+          fontWeight: "bold",
+        }}
+      >
         Login
       </Text>
+
       <View
         style={{
           width: "100%",
-          padding: 20,
           backgroundColor: "white",
-          borderRadius: 10,
+          padding: 10,
+          borderRadius: 7,
         }}
       >
         <Text
           style={{
-            fontSize: 16,
-            marginBottom: 6,
-            marginTop: 12,
+            padding: 5,
           }}
         >
           Email:
         </Text>
+
+        {/* belajar input */}
         <TextInput
-          placeholder="isi email"
+          placeholder="Masukkan email"
           style={{
-            borderWidth: 1,
-            borderColor: "#ccc",
-            borderRadius: 8,
+            height: 40,
             padding: 10,
-            backgroundColor: "#fff",
-            color: "grey",
+            marginHorizontal: 6,
+            borderWidth: 1,
+            borderColor: "gray",
+            borderRadius: 5,
           }}
         />
-
         <Text
           style={{
-            fontSize: 16,
-            marginBottom: 6,
-            marginTop: 12,
+            padding: 5,
           }}
         >
           Password:
         </Text>
+
+        {/* belajar input */}
         <TextInput
-          placeholder="isi password"
+          placeholder="Masukkan password"
           style={{
-            borderWidth: 1,
-            borderColor: "#ccc",
-            borderRadius: 8,
+            height: 40,
             padding: 10,
-            backgroundColor: "#fff",
-            color: "grey",
-            marginBottom: 20,
+            marginHorizontal: 6,
+            borderWidth: 1,
+            borderColor: "gray",
+            borderRadius: 5,
           }}
         />
-        <Button title="Login"></Button>
+        <View
+          style={{
+            width: "100%",
+            backgroundColor: "white",
+            padding: 10,
+            borderRadius: 7,
+          }}
+        >
+          <Button title="LOGIN" />
+        </View>
       </View>
     </View>
   );
