@@ -10,35 +10,35 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const notes = [
-  {
-    id: 1,
-    image: require("@/assets/images/kerja2Logo.png"),
-    title: "Belajar Mobile App",
-    description: "Belajar membuat aplikasi restful api",
-    date: "30/10/2025",
-  },
-  {
-    id: 2,
-    image: require("@/assets/images/noteLogo.png"),
-    title: "Belajar Backend",
-    description: "Belajar membuat aplikasi restful api",
-    date: "30/10/2025",
-  },
-  {
-    id: 3,
-    image: require("@/assets/images/idekontenLogo.png"),
-    title: "Belajar Mobile App",
-    description: "Belajar membuat aplikasi restful api",
-    date: "30/10/2025",
-  },
-  {
-    id: 4,
-    image: require("@/assets/images/maenbolaLogo.png"),
-    title: "Belajar Mobile App",
-    description: "Belajar membuat aplikasi restful api",
-    date: "30/10/2025",
-  },
+const notes: Note[] = [
+  // {
+  //   id: 1,
+  //   image: require("@/assets/images/kerja2Logo.png"),
+  //   title: "Belajar Mobile App",
+  //   description: "Belajar membuat aplikasi restful api",
+  //   date: "30/10/2025",
+  // },
+  // {
+  //   id: 2,
+  //   image: require("@/assets/images/conversationLogo.png"),
+  //   title: "Belajar Backend",
+  //   description: "Belajar membuat aplikasi restful api",
+  //   date: "30/10/2025",
+  // },
+  // {
+  //   id: 3,
+  //   image: require("@/assets/images/idekontenLogo.png"),
+  //   title: "Belajar Mobile App",
+  //   description: "Belajar membuat aplikasi restful api",
+  //   date: "30/10/2025",
+  // },
+  // {
+  //   id: 4,
+  //   image: require("@/assets/images/maenbolaLogo.png"),
+  //   title: "Belajar Mobile App",
+  //   description: "Belajar membuat aplikasi restful api",
+  //   date: "30/10/2025",
+  // },
 ];
 
 type Note = {
@@ -79,7 +79,7 @@ export default function HomeScreen() {
           data={notes}
           renderItem={({ item }) => <NoteItem item={item} />}
           keyExtractor={(item) => item.id.toString()}
-          contentContainerStyle={{ gap: 10 }}
+          contentContainerStyle={{ gap: 10, flexGrow: 1 }}
           ListEmptyComponent={() => <EmptyData />}
         />
       </View>
@@ -93,8 +93,15 @@ export default function HomeScreen() {
 
 const EmptyData = () => {
   return (
-    <View>
-      <Text>Data Kosong</Text>
+    <View style={styles.emptyContainer}>
+      <Image
+        style={{ width: 150, height: 150 }}
+        source={require("@/assets/images/emptyLogo.png")}
+      />
+      <Text style={styles.emptyTitle}>Add your first note</Text>
+      <Text style={styles.emptyDesc}>
+        Save your thoughts, tasks or inspirations
+      </Text>
     </View>
   );
 };
@@ -153,6 +160,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-  cardDesc: {},
-  cardDate: {},
+  cardDesc: {
+    fontSize: 16,
+  },
+  cardDate: {
+    fontSize: 14,
+  },
+
+  emptyContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 8,
+  },
+  emptyTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginTop: 8,
+  },
+  emptyDesc: {
+    fontSize: 16,
+    color: "gray",
+  },
 });
