@@ -17,8 +17,6 @@ export default function DetailScreen() {
 
   const note = notes.find((note) => note.id === Number(id));
 
-  console.log(note);
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.appBar}>
@@ -37,7 +35,10 @@ export default function DetailScreen() {
         </View>
       </ScrollView>
       <View style={styles.background}>
-        <TouchableOpacity style={styles.update}>
+        <TouchableOpacity
+          style={styles.update}
+          onPress={() => router.push(`/update/${id}`)}
+        >
           <Text style={{ color: "white" }}>Update</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.delete}>
